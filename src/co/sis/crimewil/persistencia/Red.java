@@ -6,9 +6,11 @@ public class Red {
 	private String broadcast;
 	private int cantHost;
 	private String[] rangoIP;
+	private int mascaraRed;
 	
-	public Red() {
-		
+	public Red(String direccionRed, int mascaraRed) {
+		this.direccionRed = direccionRed;
+		this.mascaraRed = mascaraRed;
 	}
 	
 	
