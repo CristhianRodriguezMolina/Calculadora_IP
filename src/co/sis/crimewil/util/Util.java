@@ -86,6 +86,27 @@ public class Util {
 		
 	}
 	
+	public static int[] restarBit(int[] numBinario1, int[]numBinario2) {
+		int salida[] = new int[32];
+		for (int i = salida.length - 1; i >= 0 ; i--) {
+			int elemento = numBinario1[i] - numBinario2[i];
+			if (elemento == 1 || elemento == 0) {
+				salida[i] = elemento;
+			}else {
+				salida[i] = 1;
+				for (int j = i-1; numBinario1[j] >= 0 ; j--) {
+					if(numBinario1[j] == 0) {
+						numBinario1[j] = 1;
+					}else {
+						numBinario1[j] = 0;
+						break;
+					}
+				}
+			}
+		}
+		return salida;
+	}
+	 
 	public static int[] sumarBit(int[] numBinario1, int[]numBinario2) {
 		int salida[] = new int[32];
 		int carry = 0;

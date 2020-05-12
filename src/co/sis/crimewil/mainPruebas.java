@@ -15,14 +15,19 @@ public class mainPruebas {
 		
 		
 		int[] b = {1,1,0,1,0,0,0,0};
-		int[] c = {1,1,1,1,1,1,0,0};
+		int[] c = {1,1,1,1,1,1,0,0,1,1,1,0,1,1,0,1,1,1,0,0,1,0,1,0,1,0,1,0,1,1,0,0};
+		int[] d = {0,0,0,0,0,0,1,1};
+		int[] one = new int[32];
+		one[31] = 1;
+		one[30] = 1;
 		
-		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.calcularDireccionBroadcast(b, c));
-		System.out.println();
-		System.out.println(co.sis.crimewil.util.Util.obtenerCantDireccionesIP(c));
-		System.out.println();
-		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.sumarBit(b, c));
-		
+		//co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.calcularDireccionBroadcast(b, c));
+		//System.out.println();
+		//System.out.println(co.sis.crimewil.util.Util.obtenerCantDireccionesIP(c));
+		//System.out.println();
+		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.sumarBit(c, one));
+		System.out.println("restar");
+		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.restarBit(b, d));
 	}
 	
 }
