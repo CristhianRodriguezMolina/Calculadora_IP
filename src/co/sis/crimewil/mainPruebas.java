@@ -20,6 +20,8 @@ public class mainPruebas {
 		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.calcularDireccionBroadcast(b, c));
 		System.out.println();
 		System.out.println(co.sis.crimewil.util.Util.obtenerCantDireccionesIP(c));
+		System.out.println();
+		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.sumarBit(b, c));
 		
 	}
 	

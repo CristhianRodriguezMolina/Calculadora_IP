@@ -7,12 +7,14 @@ public class Util {
 	 * @param mascara
 	 * @return
 	 */
-	public static int[] obtenerMascara(int mascara) {		
-		int[] mascaraRed = new int[32];		
+	public static int[] obtenerMascara(int mascara) {
+		
+		int[] mascaraRed = new int[32];
 		for (int i = 0; i < mascara; i++) {
 			mascaraRed[i] = 1;
-		}		
-		return mascaraRed;		
+		}
+		return mascaraRed;
+		
 	}
 	
 	/**
@@ -84,7 +86,25 @@ public class Util {
 		
 	}
 	
-	public static int[] sumarBit(int[] direccion)
+	public static int[] sumarBit(int[] numBinario1, int[]numBinario2) {
+		int salida[] = new int[32];
+		int carry = 0;
+		for (int i = salida.length - 1; i >= 0 ; i--) {
+			int elemento = numBinario1[i] + numBinario2[i] + carry;
+			if(elemento == 2) {
+				salida[i] = 0;
+				carry = 1;
+			}else
+			if(elemento == 3) {
+				salida[i] = 1;
+				carry = 1;
+			}else {
+				salida[i] = elemento;
+				carry = 0;
+			}
+		}
+		return salida;
+	}
 	
 	/**
 	 * 
