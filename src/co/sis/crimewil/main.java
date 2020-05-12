@@ -1,9 +1,5 @@
 package co.sis.crimewil;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import co.sis.crimewil.controlador.ManejadorEscenarios;
 import javafx.application.Application;
 import javafx.stage.Stage;
