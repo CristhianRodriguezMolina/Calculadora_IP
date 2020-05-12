@@ -1,28 +1,32 @@
-
 package co.sis.crimewil;
 
+import co.sis.crimewil.controlador.ManejadorEscenarios;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 
+/**
+ * Aplicadion main o ejecutable
+ * @author Wilmar Stiven Valencia Cardona
+ * @author Cristhian Camilo Rodriguez Molina
+ * @version 1.0
+ */
+public class Main extends Application {
 
-public class main extends Application {
-	@Override
-	public void start(Stage primaryStage) {
-		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-	
+	/**
+	 * Metodo principal para la ejecucion del programa
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
+
+	/**
+	 * Inicia la app
+	 */
+	@Override
+	public void start(Stage primaryStage) {
+
+		new ManejadorEscenarios(primaryStage);
+	}
+
 }
