@@ -18,6 +18,8 @@ public class mainPruebas {
 		int[] c = {1,1,1,1,1,1,0,0};
 		
 		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.calcularDireccionBroadcast(b, c));
+		System.out.println();
+		System.out.println(co.sis.crimewil.util.Util.obtenerCantDireccionesIP(c));
 		
 	}
 	
