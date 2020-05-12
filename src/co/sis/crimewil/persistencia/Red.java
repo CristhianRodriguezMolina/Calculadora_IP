@@ -52,5 +52,7 @@ public class Red {
 	public void setMascaraRed(int mascaraRed) {
 		this.mascaraRed = mascaraRed;
 	}
+
+	public Red() {}
 	
 }

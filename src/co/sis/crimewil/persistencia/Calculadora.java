@@ -1,10 +1,14 @@
 package co.sis.crimewil.persistencia;
 
+
+
 public class Calculadora {
 	
 	public Calculadora() {}
 	
-	public void calcularDatos(int) {
+	public Red calcularDatos(int[] direccionRed, int[] mascaraRed) {
+		
+		Red red = new Red(); 
 		
 		
 		
