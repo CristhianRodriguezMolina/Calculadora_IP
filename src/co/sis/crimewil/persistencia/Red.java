@@ -7,6 +7,8 @@ public class Red {
 	private int cantHost;
 	private String[] rangoIP;
 	private int mascaraRed;
+
+	public Red() {}
 	
 	public Red(String direccionRed, int mascaraRed) {
 		this.direccionRed = direccionRed;
@@ -53,6 +55,6 @@ public class Red {
 		this.mascaraRed = mascaraRed;
 	}
 
-	public Red() {}
+	
 	
 }

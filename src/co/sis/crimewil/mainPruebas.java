@@ -13,6 +13,12 @@ public class mainPruebas {
 			System.out.println(a[i]);
 		}
 		
+		
+		int[] b = {1,1,0,1,0,0,0,0};
+		int[] c = {1,1,1,1,1,1,0,0};
+		
+		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.calcularDireccionBroadcast(b, c));
+		
 	}
 	
 }
