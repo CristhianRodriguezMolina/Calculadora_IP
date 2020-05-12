@@ -21,8 +21,12 @@ public class mainPruebas {
 		System.out.println();
 		System.out.println(co.sis.crimewil.util.Util.obtenerCantDireccionesIP(c));
 		System.out.println();
-		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.sumarBit(b, c));
-		
+		int[] one = new int[32];
+		one[31] = 1;
+		co.sis.crimewil.util.Util.imprimirArreglo(one);
+		System.out.println();
+		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.sumarBit(b));
+				
 	}
 	
 }

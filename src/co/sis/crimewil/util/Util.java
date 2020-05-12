@@ -86,6 +86,31 @@ public class Util {
 		
 	}
 	
+	public static int[] sumarBit(int[] direccionIP) {
+		
+		//Vector que representa un uno binario en 32 bits
+		int[] one = new int[32];
+		one[31] = 1;
+		one[7] = 1;
+		
+		int[] salida = new int[32];
+		int carry = 0;
+		
+		for (int i = direccionIP.length-1; i > 0;i--) {
+			if(direccionIP[i] + one[i] + carry == 2) {
+				salida[i] = 0;
+				carry = 1;
+			}else if(direccionIP[i] + one[i] + carry == 1) {
+				salida[i] = 1;
+				carry = 0;
+			}else {
+				
+			}
+		}
+		
+		return salida;
+		
+	}
 	public static int[] sumarBit(int[] numBinario1, int[]numBinario2) {
 		int salida[] = new int[32];
 		int carry = 0;
@@ -104,6 +129,12 @@ public class Util {
 			}
 		}
 		return salida;
+	}
+	
+	public static int[] restarBit(int[] direccionIP) {
+		
+		return new int[0];
+		
 	}
 	
 	/**
