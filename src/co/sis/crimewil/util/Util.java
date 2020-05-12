@@ -51,9 +51,15 @@ public class Util {
 		
 	}
 	
-	public static int[] obtenerRangoIPs(int[] direccionRed, int[] direccionBroadcast) {
+	public static int[][] obtenerRangoIPs(int[] direccionRed, int[] direccionBroadcast) {
+		int[] one = new int[32];
+		one[31] = 1;
+		int[] primero = sumarBit(direccionRed, one);
+		int[] ultimo = restarBit(direccionBroadcast, one);
 		
+		int[][] rangos = {primero,ultimo};
 		
+		return rangos;
 		
 	}
 	
