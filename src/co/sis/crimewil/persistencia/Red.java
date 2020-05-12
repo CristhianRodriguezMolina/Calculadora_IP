@@ -10,9 +10,12 @@ public class Red {
 
 	public Red() {}
 	
-	public Red(int direccionRed[], int mascaraRed[]) {
+	public Red(int[] direccionRed, int[] mascaraRed, int[] direccionBroadcast, int cantHost, int[][] rangoIP) {
 		this.direccionRed = direccionRed;
 		this.mascaraRed = mascaraRed;
+		this.direccionBroadcast = direccionBroadcast;
+		this.cantHost = cantHost;
+		this.rangoIP = rangoIP;
 	}
 
 	public int[] getDireccionRed() {
