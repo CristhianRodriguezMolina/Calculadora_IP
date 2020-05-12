@@ -2,33 +2,41 @@ package co.sis.crimewil.persistencia;
 
 public class Red {
 
-	private String direccionRed;
-	private String broadcast;
+	private int direccionRed[];
+	private int mascaraRed[];
+	private int direccionBroadcast[];
 	private int cantHost;
-	private String[] rangoIP;
-	private int mascaraRed;
+	private int rangoIP[][];
 
 	public Red() {}
 	
-	public Red(String direccionRed, int mascaraRed) {
+	public Red(int direccionRed[], int mascaraRed[]) {
 		this.direccionRed = direccionRed;
 		this.mascaraRed = mascaraRed;
 	}
 
-	public String getDireccionRed() {
+	public int[] getDireccionRed() {
 		return direccionRed;
 	}
 
-	public void setDireccionRed(String direccionRed) {
+	public void setDireccionRed(int[] direccionRed) {
 		this.direccionRed = direccionRed;
 	}
 
-	public String getBroadcast() {
-		return broadcast;
+	public int[] getMascaraRed() {
+		return mascaraRed;
 	}
 
-	public void setBroadcast(String broadcast) {
-		this.broadcast = broadcast;
+	public void setMascaraRed(int[] mascaraRed) {
+		this.mascaraRed = mascaraRed;
+	}
+
+	public int[] getDireccionBroadcast() {
+		return direccionBroadcast;
+	}
+
+	public void setDireccionBroadcast(int[] direccionBroadcast) {
+		this.direccionBroadcast = direccionBroadcast;
 	}
 
 	public int getCantHost() {
@@ -39,22 +47,12 @@ public class Red {
 		this.cantHost = cantHost;
 	}
 
-	public String[] getRangoIP() {
+	public int[][] getRangoIP() {
 		return rangoIP;
 	}
 
-	public void setRangoIP(String[] rangoIP) {
+	public void setRangoIP(int[][] rangoIP) {
 		this.rangoIP = rangoIP;
 	}
 
-	public int getMascaraRed() {
-		return mascaraRed;
-	}
-
-	public void setMascaraRed(int mascaraRed) {
-		this.mascaraRed = mascaraRed;
-	}
-
-	
-	
 }
