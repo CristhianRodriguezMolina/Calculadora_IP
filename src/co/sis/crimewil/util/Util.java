@@ -46,7 +46,7 @@ public class Util {
 	 */
 	public static int[] calcularDireccionBroadcast(int[] direccionRed, int[] mascaraRed) {
 		
-		int[] direccionBroadcast = direccionRed;
+		int[] direccionBroadcast = direccionRed.clone();
 		for (int i = mascaraRed.length-1; mascaraRed[i] != 1; i--) {			
 			direccionBroadcast[i] = 1;					
 		}		
@@ -70,11 +70,11 @@ public class Util {
 		
 		//SE SUMA UN BIT A LA DIRECCION DE RED Y SE RESTA UNO A LA DE BROADCAST
 		int[] direccionAct = sumarBit(direccionRed, one);
-		while(!direccionAct.equals(direccionBroadcast)) {
+		while(!Arrays.equals(direccionAct, direccionBroadcast)) {
 			rango.add(direccionAct);
 			direccionAct = sumarBit(direccionAct, one);
-		}		
-					
+		}
+		
 		return rango;
 		
 	}
