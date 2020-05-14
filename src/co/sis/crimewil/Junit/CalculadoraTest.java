@@ -1,4 +1,4 @@
-package co.sis.crimewl.Junit;
+package co.sis.crimewil.Junit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
