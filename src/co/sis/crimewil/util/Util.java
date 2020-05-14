@@ -1,5 +1,8 @@
 package co.sis.crimewil.util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Util {
 	
 	/**
@@ -51,15 +54,28 @@ public class Util {
 		
 	}
 	
-	public static int[][] obtenerRangoIPs(int[] direccionRed, int[] direccionBroadcast) {
+	/**
+	 * 
+	 * @param direccionRed
+	 * @param direccionBroadcast
+	 * @return
+	 */
+	public static ArrayList<int[]> obtenerRangoIPs(int[] direccionRed, int[] direccionBroadcast) {
+		
+		//REPRESENTA UN BINARIO EN 32 BITS
 		int[] one = new int[32];
 		one[31] = 1;
-		int[] primero = sumarBit(direccionRed, one);
-		int[] ultimo = restarBit(direccionBroadcast, one);
 		
-		int[][] rangos = {primero,ultimo};
+		ArrayList<int[]> rango = new ArrayList<int[]>();
 		
-		return rangos;
+		//SE SUMA UN BIT A LA DIRECCION DE RED Y SE RESTA UNO A LA DE BROADCAST
+		int[] direccionAct = sumarBit(direccionRed, one);
+		while(!direccionAct.equals(direccionBroadcast)) {
+			rango.add(direccionAct);
+			direccionAct = sumarBit(direccionAct, one);
+		}		
+					
+		return rango;
 		
 	}
 	
@@ -73,6 +89,25 @@ public class Util {
 		return (int) (Math.pow(2, obtenerCantDatosArray(mascaraRed, 0)) - 2);
 		
 	}
+	
+	/**
+	 * 
+	 * @param direccion
+	 * @return
+	 */
+	public static String obtenerDireccionDecimal(int[] direccion) {
+		
+		String salidaDecimal = "";
+		for (int i = 0; i < direccion.length; i+=8) {
+			if(i == 0) {
+				salidaDecimal += Integer.parseInt(convertirArregloAString((Arrays.copyOfRange(direccion, i, i+8))), 2);
+			}else {
+				salidaDecimal += "." + Integer.parseInt(convertirArregloAString((Arrays.copyOfRange(direccion, i, i+8))), 2);
+			}			
+		}
+		return salidaDecimal;
+		
+	}	
 	
 	/**
 	 * 
@@ -92,6 +127,12 @@ public class Util {
 		
 	}
 	
+	/**
+	 * 
+	 * @param numBinario1
+	 * @param numBinario2
+	 * @return
+	 */
 	public static int[] restarBit(int[] numBinario1, int[]numBinario2) {
 		int salida[] = new int[32];
 		for (int i = salida.length - 1; i >= 0 ; i--) {
@@ -113,6 +154,12 @@ public class Util {
 		return salida;
 	}
 	 
+	/**
+	 * 
+	 * @param numBinario1
+	 * @param numBinario2
+	 * @return
+	 */
 	public static int[] sumarBit(int[] numBinario1, int[]numBinario2) {
 		int salida[] = new int[32];
 		int carry = 0;
@@ -131,6 +178,16 @@ public class Util {
 			}
 		}
 		return salida;
+	}
+	
+	public static String convertirArregloAString(int[] arreglo) {
+		
+		String salida = "";
+		for (int i = 0; i < arreglo.length; i++) {
+			salida += arreglo[i];					
+		}
+		return salida;
+		
 	}
 	
 	/**

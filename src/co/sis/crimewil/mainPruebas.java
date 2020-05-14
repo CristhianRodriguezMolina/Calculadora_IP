@@ -1,5 +1,7 @@
 package co.sis.crimewil;
 
+import java.util.*;
+
 public class mainPruebas {
 
 	/**
@@ -9,7 +11,7 @@ public class mainPruebas {
 	public static void main(String[] args) {
 		int[] a = {0,0,0,0,0,0,1,1};
 		int[] b = {1,1,0,1,0,0,0,0};
-		int[] c = {1,1,1,1,1,1,0,0,1,1,1,0,1,1,0,1,1,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0};
+		int[] c = {1,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0};
 		int[] d = {1,1,1,1,1,1,0,0,1,1,1,0,1,1,0,1,1,1,0,0,1,0,1,0,1,1,1,1,1,1,1,1};
 		int[] one = new int[32];
 		one[31] = 1;
@@ -22,10 +24,22 @@ public class mainPruebas {
 		//co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.sumarBit(c, one));
 		//System.out.println();
 		//co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.restarBit(a, b));
-		int[][] result = co.sis.crimewil.util.Util.obtenerRangoIPs(c, d);
-		co.sis.crimewil.util.Util.imprimirArreglo(result[0]);
-		System.out.println();
-		co.sis.crimewil.util.Util.imprimirArreglo(result[1]);
+//		int[][] result = co.sis.crimewil.util.Util.obtenerRangoIPs(c, d);
+//		co.sis.crimewil.util.Util.imprimirArreglo(result[0]);
+//		System.out.println();
+//		co.sis.crimewil.util.Util.imprimirArreglo(result[1]);
+		
+		
+		System.out.println(Integer.toString(168, 2)); //DECIMAL A BINARIO
+		System.out.println(Integer.parseInt("11111111", 2)); //BINARIO A DECIMAL
+		System.out.println(Integer.toHexString(15)); //DECIMAL A HEXA
+		System.out.println(Integer.parseInt("F", 16)); //HEXA A DECIMAL
+		
+		System.out.println(co.sis.crimewil.util.Util.convertirArregloAString(a));
+		
+		System.out.println(co.sis.crimewil.util.Util.obtenerDireccionDecimal(c));
+		
+		
 	}
 	
 }

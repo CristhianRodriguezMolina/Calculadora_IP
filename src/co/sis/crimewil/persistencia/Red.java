@@ -1,21 +1,61 @@
 package co.sis.crimewil.persistencia;
 
+import java.util.ArrayList;
+
 public class Red {
 
 	private int direccionRed[];
 	private int mascaraRed[];
 	private int direccionBroadcast[];
 	private int cantHost;
-	private int rangoIP[][];
+	private ArrayList<int[]> rangoIP;
+	private int cantBitsRed;
+	private int cantBitsHosts;
+	private String mascaraRedDecimal;
 
 	public Red() {}
 	
-	public Red(int[] direccionRed, int[] mascaraRed, int[] direccionBroadcast, int cantHost, int[][] rangoIP) {
+	public Red(int[] direccionRed, int[] mascaraRed, int[] direccionBroadcast, int cantHost, ArrayList<int[]> rangoIP) {
 		this.direccionRed = direccionRed;
 		this.mascaraRed = mascaraRed;
 		this.direccionBroadcast = direccionBroadcast;
 		this.cantHost = cantHost;
 		this.rangoIP = rangoIP;
+	}
+
+	public Red(int[] direccionRed, int[] mascaraRed, int[] direccionBroadcast, int cantHost, ArrayList<int[]>rangoIP, int cantBitsRed, int cantBitsHosts, String mascaraRedDecimal) {
+		this.direccionRed = direccionRed;
+		this.mascaraRed = mascaraRed;
+		this.direccionBroadcast = direccionBroadcast;
+		this.cantHost = cantHost;
+		this.rangoIP = rangoIP;
+		this.cantBitsRed = cantBitsRed;
+		this.cantBitsHosts = cantBitsHosts;
+		this.mascaraRedDecimal = mascaraRedDecimal;
+	}
+	
+	public int getCantBitsRed() {
+		return cantBitsRed;
+	}
+
+	public void setCantBitsRed(int cantBitsRed) {
+		this.cantBitsRed = cantBitsRed;
+	}
+
+	public int getCantBitsHosts() {
+		return cantBitsHosts;
+	}
+
+	public void setCantBitsHosts(int cantBitsHosts) {
+		this.cantBitsHosts = cantBitsHosts;
+	}
+
+	public String getMascaraRedDecimal() {
+		return mascaraRedDecimal;
+	}
+
+	public void setMascaraRedDecimal(String mascaraRedDecimal) {
+		this.mascaraRedDecimal = mascaraRedDecimal;
 	}
 
 	public int[] getDireccionRed() {
@@ -50,11 +90,11 @@ public class Red {
 		this.cantHost = cantHost;
 	}
 
-	public int[][] getRangoIP() {
+	public ArrayList<int[]> getRangoIP() {
 		return rangoIP;
 	}
 
-	public void setRangoIP(int[][] rangoIP) {
+	public void setRangoIP(ArrayList<int[]> rangoIP) {
 		this.rangoIP = rangoIP;
 	}
 
