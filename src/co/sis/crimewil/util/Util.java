@@ -169,10 +169,40 @@ public class Util {
 		return hexa;
 	}
 	
+	/**
+	 * Metodo para convertir un numero en base hexadecimal a decimal
+	 * @param el numero en base hexadecimal
+	 * @return el numero en base decimal
+	 */
 	public static int convertirHexaADecimal(String hexa) 
 	{
 		int decimal = Integer.parseInt(hexa, 16); //HEXA A DECIMAL
 		return decimal;
+	}
+	
+	
+	/**
+	 * Metodo para convetir un numero en base binaria a hexadecimal
+	 * @param arreglo de bits
+	 * @return el numero en hexadecimal
+	 */
+	public static String convertirBinarioAHexa(int[] binario) 
+	{
+		int decimal = convertirBinarioADecimal(binario);
+		String hexa = convertirDecimalAHexa(decimal);
+		return hexa;
+	}
+	
+	/**
+	 * Metodo para convetir un numero en base hexadecimal a binaria
+	 * @param el numero en base hexa
+	 * @return arreglo de bits
+	 */
+	public static int[] convertirHexaABinario(String hexa) 
+	{
+		int decimal = convertirHexaADecimal(hexa);
+		int[] binario = convertirDecimalABinario(decimal);
+		return binario;
 	}
 	
 	/**

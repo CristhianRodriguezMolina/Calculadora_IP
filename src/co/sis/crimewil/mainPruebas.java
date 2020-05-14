@@ -42,17 +42,41 @@ public class mainPruebas {
 		
 		for(int i = 0; i < 255;i++) 
 		{
+			System.out.println("DECIMAL A BINARIO");
 			System.out.println("Numero en decimal: " + i);
 			int[] binario = co.sis.crimewil.util.Util.convertirDecimalABinario(i);
+			System.out.println("Numero en binario:");
 			co.sis.crimewil.util.Util.imprimirArreglo(binario);
 			binario = co.sis.crimewil.util.Util.extenderRepresentacionBinaria(binario, 8);
+			System.out.println("");
+			System.out.println("BINARIO A DECIMAL");
+			System.out.println("Numero en binario:");
 			co.sis.crimewil.util.Util.imprimirArreglo(binario);
 			int decimal = co.sis.crimewil.util.Util.convertirBinarioADecimal(binario);
 			System.out.println("Numero en decimal: " + decimal);
+			System.out.println("");
+			System.out.println("DECIMAL A HEXA");
+			System.out.println("Numero en decimal: " + decimal);
 			String hexa = co.sis.crimewil.util.Util.convertirDecimalAHexa(decimal);
 			System.out.println("Numero en hexa: " + hexa);
-			int decimal2 = co.sis.crimewil.util.Util.convertirHexaADecimal(hexa);
-			System.out.println("Numero en hexa: " + decimal2);
+			System.out.println("");
+			System.out.println("HEXA A DECIMAL");
+			System.out.println("Numero en hexa: " + hexa);
+			decimal = co.sis.crimewil.util.Util.convertirHexaADecimal(hexa);
+			System.out.println("Numero en decimal: " + decimal);
+			System.out.println("");
+			System.out.println("BINARIO A HEXA");
+			System.out.println("Numero en binario:");
+			co.sis.crimewil.util.Util.imprimirArreglo(binario);
+			hexa = co.sis.crimewil.util.Util.convertirBinarioAHexa(binario);
+			System.out.println("Numero en hexa: " + hexa);
+			System.out.println("");
+			System.out.println("HEXA A BINARIO");
+			System.out.println("Numero en hexa: " + hexa);
+			binario = co.sis.crimewil.util.Util.convertirHexaABinario(hexa);
+			System.out.println("Numero en binario:");
+			co.sis.crimewil.util.Util.imprimirArreglo(binario);
+			
 			System.out.println("");
 		}
 		
