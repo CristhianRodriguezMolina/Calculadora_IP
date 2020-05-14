@@ -128,6 +128,58 @@ public class Util {
 	}
 	
 	/**
+	 * Metodo para convetir un numero de base decimal a base binaria
+	 * @param numero en base decimal
+	 * @return un arreglo de bits
+	 */
+	public static int[] convertirDecimalABinario(int decimal) 
+	{
+		String binario = Integer.toString(decimal, 2); //DECIMAL A BINARIO
+		int bits = binario.length();
+		int[] arrBits = new int[bits];
+		for(int i = 0; i < bits; i++) 
+		{
+			int bit = binario.charAt(i) - 48;
+			arrBits[i] = bit;
+		}
+		
+		return arrBits;
+	}
+	
+	public static int convertirBinarioADecimal(int[] binario) 
+	{
+		String cadenaBinario = convertirArregloAString(binario);
+		int decimal = Integer.parseInt(cadenaBinario, 2); //BINARIO A DECIMAL
+		return decimal;
+	}
+	
+	/**
+	 * Metodo que me extiende el arreglo de bits a un numero dado de bits para representar
+	 * @param arrBits
+	 * @param representacion
+	 * @return el numero con la nueva representacipn
+	 */
+	public static int[] extenderRepresentacionBinaria(int[] arrBits, int representacion) 
+	{
+		if(arrBits.length < representacion) 
+		{
+			int[] newArrBits = new int[representacion];
+			for(int i = arrBits.length - 1, j = representacion - 1; i >= 0; i--, j--) 
+			{
+				newArrBits[j] = arrBits[i];
+			}
+			return newArrBits;
+		}
+		else 
+		{
+			return arrBits;
+		}
+		
+	}
+	
+	
+	
+	/**
 	 * 
 	 * @param numBinario1
 	 * @param numBinario2
@@ -195,11 +247,18 @@ public class Util {
 	 * @param a
 	 */
 	public static void imprimirArreglo(int[] a) {
-		
-		for(int i=0; i<a.length; i++) {
-			System.out.print(a[i]);
+		String msj = "[ ";
+		if(a.length > 0) 
+		{
+			for(int i = 0; i < a.length; i++) {
+				msj += a[i] + ", ";
+			}
+			
+			msj = msj.substring(0, msj.length() - 2);
 		}
+		msj += " ]";
 		
+		System.out.println(msj);
 	}
 	
 }
