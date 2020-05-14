@@ -146,10 +146,32 @@ public class Util {
 		return arrBits;
 	}
 	
+	/**
+	 * Metodo para convertir un numero de base binario a decimal
+	 * @param arreglo del bits del numero
+	 * @return el numero en decimal
+	 */
 	public static int convertirBinarioADecimal(int[] binario) 
 	{
 		String cadenaBinario = convertirArregloAString(binario);
 		int decimal = Integer.parseInt(cadenaBinario, 2); //BINARIO A DECIMAL
+		return decimal;
+	}
+	
+	/**
+	 * Metodo para convertir un numero en base decimal a hexadecimal
+	 * @param el numero en base decimal
+	 * @return el numero en base hexadecimal
+	 */
+	public static String convertirDecimalAHexa(int decimal) 
+	{
+		String hexa = Integer.toHexString(decimal); //DECIMAL A HEXA
+		return hexa;
+	}
+	
+	public static int convertirHexaADecimal(String hexa) 
+	{
+		int decimal = Integer.parseInt(hexa, 16); //HEXA A DECIMAL
 		return decimal;
 	}
 	
@@ -243,7 +265,7 @@ public class Util {
 	}
 	
 	/**
-	 * 
+	 * Metodo que me permite imprimir un arreglo 
 	 * @param a
 	 */
 	public static void imprimirArreglo(int[] a) {

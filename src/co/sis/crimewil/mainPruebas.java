@@ -49,6 +49,10 @@ public class mainPruebas {
 			co.sis.crimewil.util.Util.imprimirArreglo(binario);
 			int decimal = co.sis.crimewil.util.Util.convertirBinarioADecimal(binario);
 			System.out.println("Numero en decimal: " + decimal);
+			String hexa = co.sis.crimewil.util.Util.convertirDecimalAHexa(decimal);
+			System.out.println("Numero en hexa: " + hexa);
+			int decimal2 = co.sis.crimewil.util.Util.convertirHexaADecimal(hexa);
+			System.out.println("Numero en hexa: " + decimal2);
 			System.out.println("");
 		}
 		
