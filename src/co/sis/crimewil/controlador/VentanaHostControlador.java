@@ -63,7 +63,7 @@ public class VentanaHostControlador {
 		for (int i = 0; i < mascaras.length; i++) {
 			cbxMascara.getItems().add(mascaras[i]);
 		}		
-		cbxMascara.getSelectionModel().select(0);
+		cbxMascara.getSelectionModel().select(16);
 		
 	}
 	

@@ -129,4 +129,25 @@ public class ManejadorEscenarios
 		
 	}
 	
+	/**
+	 * carga la escena deL CONVERSOR en el centro del escenario
+	 */
+	public void cargarEscenaConversor() {
+			
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("./vista/VentanaConversor.fxml"));
+			BorderPane panel = (BorderPane) loader.load();
+			borderPanel.setCenter(panel);
+
+			VentanaConversorControlador controlador = loader.getController();
+			controlador.setEscenarioInicial(this, escenario);
+
+			this.redPanel = loader;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 }

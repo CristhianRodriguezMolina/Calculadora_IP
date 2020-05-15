@@ -56,6 +56,19 @@
                   </JFXButton>
                </center>
             </BorderPane>
+            <AnchorPane prefHeight="5.0" prefWidth="160.0" />
+            <BorderPane prefHeight="70.0" prefWidth="160.0">
+               <center>
+                  <JFXButton fx:id="btnConvertir" onAction="#cargarEscenaConversor" prefHeight="65.0" prefWidth="160.0" style="-fx-background-color: lavender;" text="Convertir units" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </center>
+            </BorderPane>
          </children>
       </VBox>
    </left>

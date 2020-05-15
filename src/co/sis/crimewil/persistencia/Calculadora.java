@@ -34,27 +34,27 @@ public class Calculadora {
 		
 	}
 	
-	public int[] convertirDEC_BIN (int dec) {
+	public static int[] convertirDEC_BIN (int dec) {
 		return co.sis.crimewil.util.Util.convertirDecimalABinario(dec);
 	}
 	
-	public String convertirDEC_HEX (int dec) {
+	public static String convertirDEC_HEX (int dec) {
 		return co.sis.crimewil.util.Util.convertirDecimalAHexa(dec);
 	}
 	
-	public int convertirBIN_DEC (int bin[]) {
+	public static int convertirBIN_DEC (int bin[]) {
 		return co.sis.crimewil.util.Util.convertirBinarioADecimal(bin);
 	}
 	
-	public String convertirBIN_HEX (int bin[]) {
+	public static String convertirBIN_HEX (int bin[]) {
 		return co.sis.crimewil.util.Util.convertirBinarioAHexa(bin);
 	}
 	
-	public int convertirHEX_DEC (String hex) {
+	public static int convertirHEX_DEC (String hex) {
 		return co.sis.crimewil.util.Util.convertirHexaADecimal(hex);
 	}
 	
-	public int[] convertirHEX_BIN (String hex) {
+	public static int[] convertirHEX_BIN (String hex) {
 		return co.sis.crimewil.util.Util.convertirHexaABinario(hex);
 	}
 

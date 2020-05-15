@@ -29,12 +29,12 @@ public class mainPruebas {
 //		System.out.println();
 //		co.sis.crimewil.util.Util.imprimirArreglo(result[1]);
 		
-		System.out.println(co.sis.crimewil.util.Util.obtenerDireccionDecimal(c));
+//		System.out.println(co.sis.crimewil.util.Util.obtenerDireccionDecimal(c));
 		
-//		System.out.println(Integer.toString(168, 2)); //DECIMAL A BINARIO
-//		System.out.println(Integer.parseInt("11111111", 2)); //BINARIO A DECIMAL
-//		System.out.println(Integer.toHexString(15)); //DECIMAL A HEXA
-//		System.out.println(Integer.parseInt("F", 16)); //HEXA A DECIMAL
+		System.out.println(Integer.toString(168, 2)); //DECIMAL A BINARIO
+		System.out.println(Integer.parseInt("11111111", 2)); //BINARIO A DECIMAL
+		System.out.println(Integer.toHexString(15)); //DECIMAL A HEXA
+		System.out.println(Integer.parseInt("F", 16)); //HEXA A DECIMAL
 //		
 //		System.out.println(co.sis.crimewil.util.Util.convertirArregloAString(a));
 //		
@@ -83,8 +83,8 @@ public class mainPruebas {
 //		
 //		System.out.println(co.sis.crimewil.util.Util.obtenerDireccionBinaria(255, 255, 255, 0).toString());
 		
-		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.convertirDecimalABinario(255));
-		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.obtenerDireccionBinaria(255, 255, 224, 0));
+//		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.convertirDecimalABinario(255));
+//		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.obtenerDireccionBinaria(255, 255, 224, 0));
 	}
 	
 }

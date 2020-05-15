@@ -14,6 +14,9 @@ public class VentanaPrincipalControlador {
 
     @FXML
     private JFXButton btnRed;
+
+	@FXML
+    private JFXButton btnConvertir;
 	
 	/**
 	 * instancia del manejador de los escenario
@@ -42,6 +45,15 @@ public class VentanaPrincipalControlador {
 	@FXML
 	 void cargarEscenaRed(ActionEvent event) {
 		this.manejador.cargarEscenaRed();
+	}
+	
+	/**
+	 * carga la escena del CONVERSOR en el centro del escenario
+	 * @param event
+	 */
+	@FXML
+	void cargarEscenaConversor(ActionEvent event) {
+		this.manejador.cargarEscenaConversor();
 	}
 	
 	/**
