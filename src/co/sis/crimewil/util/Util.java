@@ -117,7 +117,7 @@ public class Util {
 	 * @param ip4
 	 * @return
 	 */
-	public static String obtenerDireccionBinaria(int ip1, int ip2, int ip3, int ip4) {
+	public static int[] obtenerDireccionBinaria(int ip1, int ip2, int ip3, int ip4) {
 
 		int[] direccionBinaria = new int[32];
 		
@@ -126,11 +126,35 @@ public class Util {
 		int[] numeroBinario3 = convertirDecimalABinario(ip3);
 		int[] numeroBinario4 = convertirDecimalABinario(ip4);
 		
-		for (int i = numeroBinario.length; i >= 0 ; i-=8) {
-			
+		int i = direccionBinaria.length-1;
+		
+		for (int j = numeroBinario4.length-1; j >= 0; j--) {
+			direccionBinaria[i] = numeroBinario4[j];
+			i--;
 		}
 		
-		return "";
+		i = 23;
+		
+		for (int j = numeroBinario3.length-1; j >= 0; j--) {
+			direccionBinaria[i] = numeroBinario3[j];
+			i--;
+		}
+		
+		i = 15;
+		
+		for (int j = numeroBinario2.length-1; j >= 0; j--) {
+			direccionBinaria[i] = numeroBinario2[j];
+			i--;
+		}
+		
+		i = 7;
+		
+		for (int j = numeroBinario2.length-1; j >= 0; j--) {
+			direccionBinaria[i] = numeroBinario[j];
+			i--;
+		}
+		
+		return direccionBinaria;
 		
 	}
 	

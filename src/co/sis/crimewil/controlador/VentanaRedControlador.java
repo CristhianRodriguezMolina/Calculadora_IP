@@ -6,8 +6,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import co.sis.crimewil.persistencia.Red;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
@@ -81,6 +80,13 @@ public class VentanaRedControlador {
 	@FXML
     void calcularRed(ActionEvent event) {
 
+		int[] direccionRed = co.sis.crimewil.util.Util.obtenerDireccionBinaria(Integer.parseInt(txtIP1.getText()), Integer.parseInt(txtIP2.getText()), Integer.parseInt(txtIP3.getText()), Integer.parseInt(txtIP4.getText()));
+		int[] mascaraRed = co.sis.crimewil.util.Util.obtenerMascara(cbxMascara.getValue());
+				
+		Red red = co.sis.crimewil.persistencia.Calculadora.calcularDatosRed(direccionRed, mascaraRed);
+		
+		System.out.println(red.toString());
+		
     }
 
     /**

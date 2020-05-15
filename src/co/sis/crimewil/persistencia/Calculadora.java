@@ -6,7 +6,7 @@ public class Calculadora {
 	
 	public Calculadora() {}
 	
-	public Red calcularDatosHost(int[] direccionHost, int[] mascaraRed) {
+	public static Red calcularDatosHost(int[] direccionHost, int[] mascaraRed) {
 		
 		int[] direccionRed = co.sis.crimewil.util.Util.calcularDireccionRed(direccionHost, mascaraRed);
 		int[] direccionBroadcast = co.sis.crimewil.util.Util.calcularDireccionBroadcast(direccionRed, mascaraRed);
@@ -19,7 +19,7 @@ public class Calculadora {
  		
 	}
 	
-	public Red calcularDatosRed(int[] direccionRed, int[] mascaraRed) {
+	public static Red calcularDatosRed(int[] direccionRed, int[] mascaraRed) {
 		
 		String mascaraRedDecimal = co.sis.crimewil.util.Util.obtenerDireccionDecimal(direccionRed);
 		int[] direccionBroadcast = co.sis.crimewil.util.Util.calcularDireccionBroadcast(direccionRed, mascaraRed);
@@ -58,4 +58,11 @@ public class Calculadora {
 		return co.sis.crimewil.util.Util.convertirHexaABinario(hex);
 	}
 
+	@Override
+	public String toString() {
+		return "Calculadora [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+
+	
 }

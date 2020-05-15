@@ -1,6 +1,7 @@
 package co.sis.crimewil.persistencia;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Red {
 
@@ -98,4 +99,13 @@ public class Red {
 		this.rangoIP = rangoIP;
 	}
 
+	@Override
+	public String toString() {
+		return "Red [direccionRed=" + Arrays.toString(direccionRed) + ", mascaraRed=" + Arrays.toString(mascaraRed)
+				+ ", direccionBroadcast=" + Arrays.toString(direccionBroadcast) + ", cantHost=" + cantHost
+				+ ", rangoIP=" + rangoIP + ", cantBitsRed=" + cantBitsRed + ", cantBitsHosts=" + cantBitsHosts
+				+ ", mascaraRedDecimal=" + mascaraRedDecimal + "]";
+	}
+
+	
 }

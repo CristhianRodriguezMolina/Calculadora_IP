@@ -83,7 +83,8 @@ public class mainPruebas {
 //		
 //		System.out.println(co.sis.crimewil.util.Util.obtenerDireccionBinaria(255, 255, 255, 0).toString());
 		
-		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.convertirDecimalABinario(5));
+		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.convertirDecimalABinario(255));
+		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.obtenerDireccionBinaria(255, 255, 224, 0));
 	}
 	
 }
