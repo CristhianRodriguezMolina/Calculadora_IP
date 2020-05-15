@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="440.0" style="-fx-background-color: azure;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.sis.crimewil.controlador.VentanaHostControlador">
    <top>
       <BorderPane prefHeight="120.0" prefWidth="440.0" BorderPane.alignment="CENTER">
@@ -55,7 +54,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <JFXComboBox fx:id="cbxMascara" layoutX="265.0" layoutY="60.0" prefHeight="25.0" prefWidth="40.0" />
+                  <JFXComboBox fx:id="cbxMascara" layoutX="265.0" layoutY="60.0" prefHeight="25.0" prefWidth="62.0" />
                </children>
             </AnchorPane>
          </center>
@@ -120,7 +119,7 @@
                   </Label>
                </left>
                <center>
-                  <JFXTextField fx:id="txtRangoIP" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="191.0" BorderPane.alignment="CENTER" />
+                  <JFXTextField fx:id="txtRangoIP" editable="false" prefHeight="25.0" prefWidth="191.0" BorderPane.alignment="CENTER" />
                </center>
                <right>
                   <AnchorPane prefHeight="72.0" prefWidth="57.0" BorderPane.alignment="CENTER" />

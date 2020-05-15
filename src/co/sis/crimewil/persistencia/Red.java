@@ -35,6 +35,27 @@ public class Red {
 		this.mascaraRedDecimal = mascaraRedDecimal;
 	}
 	
+	public ArrayList<String> getRangoIPString(){
+		
+		ArrayList<String> salida = new ArrayList<String>();
+		
+		for (int i = 0; i < rangoIP.size(); i++) {
+			salida.add(co.sis.crimewil.util.Util.obtenerDireccionDecimal(rangoIP.get(i)));
+		}
+		
+		return salida;
+		
+	}
+	
+	public String getRangoIPAsignables() {
+		
+		String salida = co.sis.crimewil.util.Util.obtenerDireccionDecimal(rangoIP.get(1));
+		salida += " - ";
+		salida += co.sis.crimewil.util.Util.obtenerDireccionDecimal(rangoIP.get(rangoIP.size()-2));
+		return  salida;
+				
+	}
+	
 	public int getCantBitsRed() {
 		return cantBitsRed;
 	}

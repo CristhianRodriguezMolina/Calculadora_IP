@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 
 import co.sis.crimewil.persistencia.Red;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
@@ -42,7 +43,7 @@ public class VentanaHostControlador {
     private JFXTextField txtRangoIP;
 
     @FXML
-    private JFXComboBox<?> cbxIPsAsignables;    
+    private JFXComboBox<String> cbxIPsAsignables;    
     /**
 	 * instancia del manejador de los escenario
 	 */
@@ -62,6 +63,7 @@ public class VentanaHostControlador {
 		for (int i = 0; i < mascaras.length; i++) {
 			cbxMascara.getItems().add(mascaras[i]);
 		}		
+		cbxMascara.getSelectionModel().select(0);
 		
 	}
 	
@@ -72,12 +74,25 @@ public class VentanaHostControlador {
 	@FXML
     void calcularRed(ActionEvent event) {
 
+		System.out.println("Paso 1");
+		
 		int[] direccionHost = co.sis.crimewil.util.Util.obtenerDireccionBinaria(Integer.parseInt(txtIP1.getText()), Integer.parseInt(txtIP2.getText()), Integer.parseInt(txtIP3.getText()), Integer.parseInt(txtIP4.getText()));
 		int[] mascaraRed = co.sis.crimewil.util.Util.obtenerMascara(cbxMascara.getValue());
-				
+		
+		System.out.println("Paso 2");
+		
 		Red red = co.sis.crimewil.persistencia.Calculadora.calcularDatosHost(direccionHost, mascaraRed);
 		
-		System.out.println(red.toString());
+		System.out.println("Paso 3");
+		
+		txtDireccionRed.setText(co.sis.crimewil.util.Util.obtenerDireccionDecimal(red.getDireccionRed()));
+		txtDireccionBroadcast.setText(co.sis.crimewil.util.Util.obtenerDireccionDecimal(red.getDireccionBroadcast()));
+		txtCantHost.setText(red.getCantHost()+"");
+		txtRangoIP.setText(red.getRangoIPAsignables());
+		cbxIPsAsignables.setItems(FXCollections.observableList(red.getRangoIPString()));
+		cbxIPsAsignables.getSelectionModel().select(0);
+		
+		System.out.println("Paso 4");
 		
     }
 
