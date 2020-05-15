@@ -54,7 +54,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <JFXComboBox fx:id="cbxMascara" layoutX="266.0" layoutY="60.0" prefHeight="25.0" prefWidth="40.0" />
+                  <JFXComboBox fx:id="cbxMascara" layoutX="266.0" layoutY="60.0" prefHeight="25.0" prefWidth="64.0" />
                </children>
             </AnchorPane>
          </center>
@@ -148,7 +148,7 @@
                   </Label>
                </left>
                <center>
-                  <JFXTextField fx:id="txtRangoIP" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="191.0" BorderPane.alignment="CENTER" />
+                  <JFXTextField fx:id="txtRangoIP" editable="false" prefHeight="25.0" prefWidth="191.0" BorderPane.alignment="CENTER" />
                </center>
                <right>
                   <AnchorPane prefHeight="72.0" prefWidth="57.0" BorderPane.alignment="CENTER" />
