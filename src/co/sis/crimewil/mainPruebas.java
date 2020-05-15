@@ -80,8 +80,10 @@ public class mainPruebas {
 //			
 //			System.out.println("");
 //		}
+//		
+//		System.out.println(co.sis.crimewil.util.Util.obtenerDireccionBinaria(255, 255, 255, 0).toString());
 		
-		
+		co.sis.crimewil.util.Util.imprimirArreglo(co.sis.crimewil.util.Util.convertirDecimalABinario(5));
 	}
 	
 }

@@ -1,6 +1,6 @@
 package co.sis.crimewil.controlador;
 
-import java.awt.event.ActionEvent;
+import java.util.Arrays;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -8,10 +8,11 @@ import com.jfoenix.controls.JFXTextField;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 
-public class VentanaHostControlador {
+public class VentanaRedControlador {
 
     @FXML
     private JFXTextField txtIP1;
@@ -32,10 +33,16 @@ public class VentanaHostControlador {
     private JFXComboBox<Integer> cbxMascara;
 
     @FXML
-    private JFXTextField txtDireccionRed;
+    private JFXTextField txtMascaraRed;
 
     @FXML
     private JFXTextField txtDireccionBroadcast;
+
+    @FXML
+    private JFXTextField txtBitsRed;
+
+    @FXML
+    private JFXTextField txtBitsHosts;
 
     @FXML
     private JFXTextField txtCantHost;
@@ -44,7 +51,7 @@ public class VentanaHostControlador {
     private JFXTextField txtRangoIP;
 
     @FXML
-    private JFXComboBox<?> cbxIPsAsignables;    
+    private JFXComboBox<String> cbxRangoIP;
     /**
 	 * instancia del manejador de los escenario
 	 */
@@ -85,5 +92,4 @@ public class VentanaHostControlador {
 		this.manejador = manejador;
 		this.escenario = escenario;
 	}
-    
 }

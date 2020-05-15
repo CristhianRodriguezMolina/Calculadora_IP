@@ -111,6 +111,31 @@ public class Util {
 	
 	/**
 	 * 
+	 * @param ip1
+	 * @param ip2
+	 * @param ip3
+	 * @param ip4
+	 * @return
+	 */
+	public static String obtenerDireccionBinaria(int ip1, int ip2, int ip3, int ip4) {
+
+		int[] direccionBinaria = new int[32];
+		
+		int[] numeroBinario = convertirDecimalABinario(ip1);
+		int[] numeroBinario2 = convertirDecimalABinario(ip2);
+		int[] numeroBinario3 = convertirDecimalABinario(ip3);
+		int[] numeroBinario4 = convertirDecimalABinario(ip4);
+		
+		for (int i = numeroBinario.length; i >= 0 ; i-=8) {
+			
+		}
+		
+		return "";
+		
+	}
+	
+	/**
+	 * 
 	 * @param arreglo
 	 * @param dato
 	 * @return
@@ -284,6 +309,11 @@ public class Util {
 		return salida;
 	}
 	
+	/**
+	 * 
+	 * @param arreglo
+	 * @return
+	 */
 	public static String convertirArregloAString(int[] arreglo) {
 		
 		String salida = "";
@@ -292,6 +322,22 @@ public class Util {
 		}
 		return salida;
 		
+	}
+	
+	/**
+	 * 
+	 * @param o1
+	 * @param o2
+	 * @return
+	 */
+	public static int[] concatenarArray(int[] o1, int[] o2)
+	{
+		int[] ret = new int[o1.length + o2.length];
+ 
+		System.arraycopy(o1, 0, ret, 0, o1.length);
+		System.arraycopy(o2, 0, ret, o1.length, o2.length);
+ 
+		return ret;
 	}
 	
 	/**
