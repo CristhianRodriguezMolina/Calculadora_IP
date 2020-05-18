@@ -3,6 +3,9 @@ package co.sis.crimewil.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 public class Util {
 	
 	/**
@@ -196,6 +199,29 @@ public class Util {
 	}
 	
 	/**
+	 * Metodo para convetir un numero de base decimal a base binaria
+	 * @param numero en base decimal
+	 * @return un cadena con el numero binario
+	 */
+	public static String convertirDecimalAStringBinario(int decimal) 
+	{
+		String binario = Integer.toString(decimal, 2); //DECIMAL A BINARIO
+		return binario;
+	}
+	
+	
+	/**
+	 * Metodo para convertir un numero de base binario a decimal
+	 * @param cadena del numero binario
+	 * @return el numero en decimal
+	 */
+	public static int convertirBinarioADecimal(String binario) 
+	{
+		int decimal = Integer.parseInt(binario, 2); //BINARIO A DECIMAL
+		return decimal;
+	}
+	
+	/**
 	 * Metodo para convertir un numero de base binario a decimal
 	 * @param arreglo del bits del numero
 	 * @return el numero en decimal
@@ -215,6 +241,7 @@ public class Util {
 	public static String convertirDecimalAHexa(int decimal) 
 	{
 		String hexa = Integer.toHexString(decimal); //DECIMAL A HEXA
+		hexa = hexa.toUpperCase();
 		return hexa;
 	}
 	
@@ -239,6 +266,20 @@ public class Util {
 	{
 		int decimal = convertirBinarioADecimal(binario);
 		String hexa = convertirDecimalAHexa(decimal);
+		hexa = hexa.toUpperCase();
+		return hexa;
+	}
+	
+	/**
+	 * Metodo para convetir un numero en base binaria a hexadecimal
+	 * @param cadena del numero binario
+	 * @return el numero en hexadecimal
+	 */
+	public static String convertirBinarioAHexa(String binario) 
+	{
+		int decimal = convertirBinarioADecimal(binario);
+		String hexa = convertirDecimalAHexa(decimal);
+		hexa = hexa.toUpperCase();
 		return hexa;
 	}
 	
@@ -251,6 +292,18 @@ public class Util {
 	{
 		int decimal = convertirHexaADecimal(hexa);
 		int[] binario = convertirDecimalABinario(decimal);
+		return binario;
+	}
+	
+	/**
+	 * Metodo para convetir un numero en base hexadecimal a binaria
+	 * @param el numero en base hexa
+	 * @return cadena del numero binario
+	 */
+	public static String convertirHexaAStringBinario(String hexa) 
+	{
+		int decimal = convertirHexaADecimal(hexa);
+		String binario = convertirDecimalAStringBinario(decimal);
 		return binario;
 	}
 	
@@ -362,6 +415,94 @@ public class Util {
 		System.arraycopy(o2, 0, ret, o1.length, o2.length);
  
 		return ret;
+	}
+	
+	
+	public static boolean isHexaNumber(String number) 
+	{
+		if(number == null || number.equals("")) 
+		{
+			return false;
+		}
+		number = number.toUpperCase();
+		char caracter;
+		for(int i = 0; i < number.length(); i++) 
+		{
+			caracter = number.charAt(i);
+			if(!((caracter >= 49 && caracter <= 57) || (caracter >= 65 && caracter <= 70))) 
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 * Metodo que me indica si la cadena contiene solo digitos de base binaria
+	 * @param number
+	 * @return true si es un número binario, de la contrario false
+	 */
+	public static boolean isBinaryNumber(String number) 
+	{
+		if(number == null || number.equals("")) 
+		{
+			return false;
+		}
+		for(int i = 0; i < number.length(); i++) 
+		{
+			if(!(number.charAt(i) == '0' || number.charAt(i) == '1')) 
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	
+	/**
+	 * Metodo que me indica si la cadena es un número
+	 * @param number
+	 * @return true si es un número, de lo contrario false
+	 */
+	public static boolean isNumeric(String number) 
+	{
+		if(number == null || number.equals("")) 
+		{
+			return false;
+		}
+		try {
+			Integer.parseInt(number);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	
+	/**
+	 * permite mostrar un texto informativo en pantalla
+	 * @param titulo subtitulo de la alerta
+	 * @param mensaje mensaje principal
+	 */
+	public static void mostrarMensajeAlerta( String titulo, String mensaje ) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Conversor");
+		alert.setHeaderText(titulo);
+		alert.setContentText(mensaje);
+		alert.showAndWait();	
+	}
+	
+	/**
+	 * permite mostrar un texto de error en pantalla
+	 * @param titulo subtitulo de la alerta
+	 * @param mensaje mensaje principal
+	 */
+	public static void mostrarMensajeError( String titulo, String mensaje ) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("Conversor");
+		alert.setHeaderText(titulo);
+		alert.setContentText(mensaje);
+		alert.showAndWait();	
 	}
 	
 	/**
