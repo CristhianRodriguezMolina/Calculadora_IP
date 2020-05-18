@@ -129,6 +129,11 @@ public class Util {
 		int[] numeroBinario3 = convertirDecimalABinario(ip3);
 		int[] numeroBinario4 = convertirDecimalABinario(ip4);
 		
+		numeroBinario = extenderRepresentacionBinaria(numeroBinario, 8);
+		numeroBinario2 = extenderRepresentacionBinaria(numeroBinario2, 8);
+		numeroBinario3 = extenderRepresentacionBinaria(numeroBinario3, 8);
+		numeroBinario4 = extenderRepresentacionBinaria(numeroBinario4, 8);
+		
 		int i = direccionBinaria.length-1;
 		
 		for (int j = numeroBinario4.length-1; j >= 0; j--) {
@@ -331,6 +336,51 @@ public class Util {
 		
 	}
 	
+	public static boolean isValidIp(String ip1, String ip2, String ip3, String ip4) 
+	{
+		
+		boolean valid = false;
+		if((ip1 == null || ip1.equals("")) && (ip2 == null || ip2.equals("")) &&
+			(ip3 == null || ip3.equals("")) && (ip4 == null || ip4.equals("")))
+		{
+			valid = false;
+		}
+		
+		try {
+			int ip1Decimal = Integer.parseInt(ip1);
+			int ip2Decimal = Integer.parseInt(ip2);
+			int ip3Decimal = Integer.parseInt(ip3);
+			int ip4Decimal = Integer.parseInt(ip4);
+			
+			if((ip1Decimal >= 0 && ip1Decimal <= 255) || (ip2Decimal >= 0 && ip2Decimal <= 255) 
+				|| (ip3Decimal >= 0 && ip3Decimal <= 255) || (ip4Decimal >= 0 && ip4Decimal <= 255)) 
+			{
+				valid = true;
+			}
+			return valid;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	/**
+	 * Metodo que me dice si una direccion es de una red dada la mascara de subred
+	 * @param direccionRed
+	 * @param mascaraRed
+	 * @return
+	 */
+	public static boolean validarDireccionRed(int[] direccionRed, int mascaraRed) 
+	{
+		for(int i = mascaraRed; i < 32; i++) 
+		{
+			if(direccionRed[i] == 1) 
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	
 	
 	/**
@@ -457,6 +507,9 @@ public class Util {
 		}
 		return true;
 	}
+	
+	
+		
 	
 	
 	/**

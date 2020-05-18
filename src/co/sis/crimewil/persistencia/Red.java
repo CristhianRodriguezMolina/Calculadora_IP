@@ -3,6 +3,8 @@ package co.sis.crimewil.persistencia;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import co.sis.crimewil.util.Util;
+
 public class Red {
 
 	private int direccionRed[];
@@ -40,7 +42,7 @@ public class Red {
 		ArrayList<String> salida = new ArrayList<String>();
 		
 		for (int i = 0; i < rangoIP.size(); i++) {
-			salida.add(co.sis.crimewil.util.Util.obtenerDireccionDecimal(rangoIP.get(i)));
+			salida.add(Util.obtenerDireccionDecimal(rangoIP.get(i)));
 		}
 		
 		return salida;
@@ -49,9 +51,9 @@ public class Red {
 	
 	public String getRangoIPAsignables() {
 		
-		String salida = co.sis.crimewil.util.Util.obtenerDireccionDecimal(rangoIP.get(1));
+		String salida = Util.obtenerDireccionDecimal(rangoIP.get(1));
 		salida += " - ";
-		salida += co.sis.crimewil.util.Util.obtenerDireccionDecimal(rangoIP.get(rangoIP.size()-2));
+		salida += Util.obtenerDireccionDecimal(rangoIP.get(rangoIP.size()-2));
 		return  salida;
 				
 	}
