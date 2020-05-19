@@ -381,6 +381,26 @@ public class Util {
 		return true;
 	}
 	
+	/**
+	 * Metodo que me dice si una direccion es de una red dada la mascara de subred
+	 * @param direccionRed
+	 * @param mascaraRed
+	 * @return
+	 */
+	public static boolean validarDireccionHost(int[] direccionHost, int mascaraRed) 
+	{
+		int sum = 0;
+		for(int i = mascaraRed; i < 32; i++) 
+		{
+			sum += direccionHost[i];
+		}
+		
+		if(sum == 0 || sum == (32 - mascaraRed)) 
+		{
+			return false;
+		}
+		return true;
+	}
 	
 	
 	/**
@@ -552,7 +572,7 @@ public class Util {
 	 */
 	public static void mostrarMensajeError( String titulo, String mensaje ) {
 		Alert alert = new Alert(AlertType.ERROR);
-		alert.setTitle("Conversor");
+		alert.setTitle("Calculadora IP");
 		alert.setHeaderText(titulo);
 		alert.setContentText(mensaje);
 		alert.showAndWait();	
