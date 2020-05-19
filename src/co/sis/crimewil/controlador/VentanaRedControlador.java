@@ -6,7 +6,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 
+import co.sis.crimewil.persistencia.Calculadora;
 import co.sis.crimewil.persistencia.Red;
+import co.sis.crimewil.util.Util;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -66,10 +69,10 @@ public class VentanaRedControlador {
 	 */
 	@FXML
 	void initialize() {
-		
-		Integer[] mascaras = {8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30};		
-		for (int i = 0; i < mascaras.length; i++) {
-			cbxMascara.getItems().add(mascaras[i]);
+		int ini = 8;
+		int fin = 30;		
+		for (int i = ini; i <= fin; i++) {
+			cbxMascara.getItems().add(i);
 		}		
 		cbxMascara.getSelectionModel().select(16);
 		
@@ -81,30 +84,70 @@ public class VentanaRedControlador {
 	 */
 	@FXML
     void calcularRed(ActionEvent event) {
-
-System.out.println("Paso 1");
 		
-		int[] direccionRed = co.sis.crimewil.util.Util.obtenerDireccionBinaria(Integer.parseInt(txtIP1.getText()), Integer.parseInt(txtIP2.getText()), Integer.parseInt(txtIP3.getText()), Integer.parseInt(txtIP4.getText()));
-		int[] mascaraRed = co.sis.crimewil.util.Util.obtenerMascara(cbxMascara.getValue());
-		
-		System.out.println("Paso 2");
-		
-		Red red = co.sis.crimewil.persistencia.Calculadora.calcularDatosRed(direccionRed, mascaraRed);
-		
-		System.out.println("Paso 3");
-		
-		txtMascaraRed.setText(red.getMascaraRedDecimal());
-		txtDireccionBroadcast.setText(co.sis.crimewil.util.Util.obtenerDireccionDecimal(red.getDireccionBroadcast()));
-		txtBitsRed.setText(red.getCantBitsRed()+"");
-		txtBitsHosts.setText(red.getCantBitsHosts()+"");
-		txtCantHost.setText(red.getCantHost()+"");
-		txtRangoIP.setText(red.getRangoIPAsignables());
-		cbxRangoIP.setItems(FXCollections.observableList(red.getRangoIPString()));
-		cbxRangoIP.getSelectionModel().select(0);
-		
-		System.out.println("Paso 4");
+		txtIP1.setText(txtIP1.getText().trim());
+		txtIP2.setText(txtIP2.getText().trim());
+		txtIP3.setText(txtIP3.getText().trim());
+		txtIP4.setText(txtIP4.getText().trim());
+		cbxRangoIP.getItems().clear();
+		if(!(txtIP1.getText().equals("") || txtIP2.getText().equals("") || 
+				txtIP3.getText().equals("") || txtIP4.getText().equals(""))) 
+		{
+			if(Util.isValidIp(txtIP1.getText(), txtIP2.getText(),txtIP3.getText(), txtIP4.getText())) 
+			{
+				int[] direccionRed = Util.obtenerDireccionBinaria(
+											Integer.parseInt(txtIP1.getText()), 
+											Integer.parseInt(txtIP2.getText()), 
+											Integer.parseInt(txtIP3.getText()), 
+											Integer.parseInt(txtIP4.getText())
+											);
+				
+				int[] mascaraRed = Util.obtenerMascara(cbxMascara.getValue());
+				
+				if(Util.validarDireccionRed(direccionRed, cbxMascara.getValue())) 
+				{					
+					Red red = Calculadora.calcularDatosRed(direccionRed, mascaraRed);
+					
+					txtMascaraRed.setText(red.getMascaraRedDecimal());
+					txtDireccionBroadcast.setText(Util.obtenerDireccionDecimal(red.getDireccionBroadcast()));
+					txtBitsRed.setText(red.getCantBitsRed()+"");
+					txtBitsHosts.setText(red.getCantBitsHosts()+"");
+					txtCantHost.setText(red.getCantHost()+"");
+					txtRangoIP.setText(red.getRangoIPAsignables());
+					cbxRangoIP.setItems(FXCollections.observableList(red.getRangoIPString()));
+					cbxRangoIP.getSelectionModel().select(0);					
+				}
+				else 
+				{
+					Util.mostrarMensajeAlerta("¡Atención!", "la dirección ingresada no es la dirección de una red");
+					resetText();
+				}
+				
+			}
+			else 
+			{
+				Util.mostrarMensajeAlerta("¡Atención!", "la red ingresada no es válida");
+				resetText();
+			}
+		}
+		else 
+		{
+			Util.mostrarMensajeAlerta("¡Atención!", "Por favor, complete todos los campos.");
+			resetText();
+		}
 		
     }
+	
+	public void resetText() 
+	{
+		txtMascaraRed.setText("");
+		txtDireccionBroadcast.setText("");
+		txtBitsRed.setText("");
+		txtBitsHosts.setText("");
+		txtCantHost.setText("");
+		txtRangoIP.setText("");
+		cbxRangoIP.getItems().clear();
+	}
 
     /**
 	 * permite obtener una instancia del escenario general

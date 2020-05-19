@@ -2,16 +2,18 @@ package co.sis.crimewil.persistencia;
 
 import java.util.ArrayList;
 
+import co.sis.crimewil.util.Util;
+
 public class Calculadora {
 	
 	public Calculadora() {}
 	
 	public static Red calcularDatosHost(int[] direccionHost, int[] mascaraRed) {
 		
-		int[] direccionRed = co.sis.crimewil.util.Util.calcularDireccionRed(direccionHost, mascaraRed);
-		int[] direccionBroadcast = co.sis.crimewil.util.Util.calcularDireccionBroadcast(direccionRed, mascaraRed);
-		int cantDireccionesIP = co.sis.crimewil.util.Util.obtenerCantDireccionesIP(mascaraRed);
-		ArrayList<int[]> rangoIP = co.sis.crimewil.util.Util.obtenerRangoIPs(direccionRed, direccionBroadcast);
+		int[] direccionRed = Util.calcularDireccionRed(direccionHost, mascaraRed);
+		int[] direccionBroadcast = Util.calcularDireccionBroadcast(direccionRed, mascaraRed);
+		int cantDireccionesIP = Util.obtenerCantDireccionesIP(mascaraRed);
+		ArrayList<int[]> rangoIP = Util.obtenerRangoIPs(direccionRed, direccionBroadcast);
 		
 		Red red = new Red(direccionRed, mascaraRed, direccionBroadcast, cantDireccionesIP, rangoIP);
 		
@@ -21,12 +23,12 @@ public class Calculadora {
 	
 	public static Red calcularDatosRed(int[] direccionRed, int[] mascaraRed) {
 		
-		String mascaraRedDecimal = co.sis.crimewil.util.Util.obtenerDireccionDecimal(direccionRed);
-		int[] direccionBroadcast = co.sis.crimewil.util.Util.calcularDireccionBroadcast(direccionRed, mascaraRed);
-		int cantDireccionesIP = co.sis.crimewil.util.Util.obtenerCantDireccionesIP(mascaraRed);		
-		int cantBitsRed = co.sis.crimewil.util.Util.obtenerCantDatosArray(mascaraRed, 1);
-		int cantBitsHosts = co.sis.crimewil.util.Util.obtenerCantDatosArray(mascaraRed, 0);
-		ArrayList<int[]> rangoIP = co.sis.crimewil.util.Util.obtenerRangoIPs(direccionRed, direccionBroadcast);
+		String mascaraRedDecimal = Util.obtenerDireccionDecimal(mascaraRed);
+		int[] direccionBroadcast = Util.calcularDireccionBroadcast(direccionRed, mascaraRed);
+		int cantDireccionesIP = Util.obtenerCantDireccionesIP(mascaraRed);		
+		int cantBitsRed = Util.obtenerCantDatosArray(mascaraRed, 1);
+		int cantBitsHosts = Util.obtenerCantDatosArray(mascaraRed, 0);
+		ArrayList<int[]> rangoIP = Util.obtenerRangoIPs(direccionRed, direccionBroadcast);
 		
 		Red red = new Red(direccionRed, mascaraRed, direccionBroadcast, cantDireccionesIP, rangoIP, cantBitsRed, cantBitsHosts, mascaraRedDecimal);
 		
@@ -35,27 +37,27 @@ public class Calculadora {
 	}
 	
 	public static int[] convertirDEC_BIN (int dec) {
-		return co.sis.crimewil.util.Util.convertirDecimalABinario(dec);
+		return Util.convertirDecimalABinario(dec);
 	}
 	
 	public static String convertirDEC_HEX (int dec) {
-		return co.sis.crimewil.util.Util.convertirDecimalAHexa(dec);
+		return Util.convertirDecimalAHexa(dec);
 	}
 	
 	public static int convertirBIN_DEC (int bin[]) {
-		return co.sis.crimewil.util.Util.convertirBinarioADecimal(bin);
+		return Util.convertirBinarioADecimal(bin);
 	}
 	
 	public static String convertirBIN_HEX (int bin[]) {
-		return co.sis.crimewil.util.Util.convertirBinarioAHexa(bin);
+		return Util.convertirBinarioAHexa(bin);
 	}
 	
 	public static int convertirHEX_DEC (String hex) {
-		return co.sis.crimewil.util.Util.convertirHexaADecimal(hex);
+		return Util.convertirHexaADecimal(hex);
 	}
 	
 	public static int[] convertirHEX_BIN (String hex) {
-		return co.sis.crimewil.util.Util.convertirHexaABinario(hex);
+		return Util.convertirHexaABinario(hex);
 	}
 
 	@Override

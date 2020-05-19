@@ -1,5 +1,7 @@
 package co.sis.crimewil.controlador;
 
+import javax.swing.JOptionPane;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -7,6 +9,8 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
+
+import co.sis.crimewil.util.Util;
 
 public class VentanaConversorControlador {
 
@@ -46,7 +50,8 @@ public class VentanaConversorControlador {
 		String[] bases = {"Decimal", "Binario", "Hexadecimal"};		
 		for (int i = 0; i < bases.length; i++) {
 			cbxBase.getItems().add(bases[i]);
-		}		
+		}
+		cbxBase.getSelectionModel().select(0);
 		
 	}
 	
@@ -55,28 +60,84 @@ public class VentanaConversorControlador {
 
     	switch(cbxBase.getValue()) {
     		case "Decimal":
-    			txtDecimal.setText(txtNumero.getText());
-    			txtBinario.setText(Integer.toString(Integer.parseInt(txtNumero.getText()), 2));
-    			txtHexa.setText(Integer.toHexString(Integer.parseInt(txtNumero.getText())));
+    			txtNumero.setText(txtNumero.getText().trim());
+    			if(!txtNumero.getText().equals("")) 
+    			{
+	    			if(Util.isNumeric(txtNumero.getText())) {
+	    				txtDecimal.setText(txtNumero.getText());
+	    				int decimal = Integer.parseInt(txtNumero.getText());
+	    				String binario = Util.convertirDecimalAStringBinario(decimal);
+	    				txtBinario.setText(binario);
+	    				String hexa = Util.convertirDecimalAHexa(decimal);
+	    				txtHexa.setText(hexa);    				
+	    			}
+	    			else 
+	    			{
+	    				Util.mostrarMensajeAlerta("¡Atención!", "El número ingresado no es un "
+    							+ "número válido para la base Decimal.");
+	    			}
+    			}
+    			else 
+    			{
+    				resetText();
+    			}
     			break;
     		case "Binario":
-    			txtDecimal.setText(Integer.parseInt(txtNumero.getText(), 2)+"");
-    			txtBinario.setText(txtNumero.getText());
-    			int decimalAux = Integer.parseInt(txtNumero.getText(), 2);
-    			System.out.println(decimalAux);
-    			txtHexa.setText(Integer.toHexString(decimalAux));
+    			txtNumero.setText(txtNumero.getText().trim());
+    			if(!txtNumero.getText().equals("")) 
+    			{
+    				if(Util.isBinaryNumber(txtNumero.getText())) {
+    					int decimal = Util.convertirBinarioADecimal(txtNumero.getText());
+    					txtDecimal.setText(decimal + "");
+    					txtBinario.setText(txtNumero.getText());
+    					String hex = Util.convertirDecimalAHexa(decimal);
+    					txtHexa.setText(hex);			
+    				}
+    				else 
+    				{
+    					Util.mostrarMensajeAlerta("¡Atención!", "El número ingresado no es un "
+    							+ "número válido para la base Binaria.");
+    				}    				
+    			}
+    			else 
+    			{
+    				resetText();
+    			}
     			break;
     		case "Hexadecimal":
-    			txtDecimal.setText(Integer.parseInt(txtNumero.getText(), 16)+"");
-    			int decimalAux2 = Integer.parseInt(txtNumero.getText(), 16);
-    			System.out.println(decimalAux2);
-    			txtBinario.setText(Integer.toString(decimalAux2, 2)+"");
-    			txtHexa.setText(txtNumero.getText());
+    			txtNumero.setText(txtNumero.getText().trim());
+    			if(!txtNumero.getText().equals("")) 
+    			{
+    				if(Util.isHexaNumber(txtNumero.getText())) 
+    				{
+    					int decimal = Util.convertirHexaADecimal(txtNumero.getText());
+    					txtDecimal.setText(decimal + "");
+    					String binario = Util.convertirDecimalAStringBinario(decimal);
+    					txtBinario.setText(binario + "");
+    					txtHexa.setText(txtNumero.getText().toUpperCase());    					
+    				}
+    				else 
+    				{
+    					Util.mostrarMensajeAlerta("¡Atención!", "El número ingresado no es un "
+    							+ "número válido para la base Hexadecimal.");
+    				}
+    			}
+    			else 
+    			{
+    				resetText();
+    			}
     			break;
     		default:
-    			System.out.println("ERROR AL CONVERTIR");
+    			Util.mostrarMensajeError("¡Error!", "Error al convertir.");
     	}
     	
+    }
+    
+    public void resetText() 
+    {
+    	txtDecimal.setText("");
+    	txtBinario.setText("");
+    	txtHexa.setText("");
     }
 
     /**
