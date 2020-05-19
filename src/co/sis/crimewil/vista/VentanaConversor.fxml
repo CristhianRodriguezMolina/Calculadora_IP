@@ -22,7 +22,7 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="txtNumero" alignment="CENTER" layoutX="45.0" layoutY="87.0" prefHeight="25.0" prefWidth="176.0" />
+                  <JFXTextField fx:id="txtNumero" alignment="CENTER" layoutX="45.0" layoutY="87.0" prefHeight="25.0" prefWidth="143.0" />
                   <JFXButton fx:id="btnCalcular" layoutX="337.0" layoutY="82.0" onAction="#convertirUnidades" prefHeight="36.0" prefWidth="89.0" style="-fx-background-color: lightgray;" text="Convertir">
                      <font>
                         <Font size="14.0" />
@@ -31,12 +31,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <Label alignment="CENTER" layoutX="223.0" layoutY="89.0" prefHeight="22.0" prefWidth="27.0" text="en">
+                  <Label alignment="CENTER" layoutX="189.0" layoutY="89.0" prefHeight="22.0" prefWidth="27.0" text="en">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <JFXComboBox fx:id="cbxBase" layoutX="252.0" layoutY="87.0" prefHeight="25.0" prefWidth="78.0" promptText="Base" />
+                  <JFXComboBox fx:id="cbxBase" layoutX="216.0" layoutY="87.0" prefHeight="25.0" prefWidth="114.0" promptText="Base" />
                </children>
             </AnchorPane>
          </center>

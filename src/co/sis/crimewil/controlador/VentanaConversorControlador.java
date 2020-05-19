@@ -51,7 +51,6 @@ public class VentanaConversorControlador {
 		for (int i = 0; i < bases.length; i++) {
 			cbxBase.getItems().add(bases[i]);
 		}
-		cbxBase.getSelectionModel().select(0);
 		
 	}
 	

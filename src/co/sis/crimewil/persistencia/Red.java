@@ -51,9 +51,9 @@ public class Red {
 	
 	public String getRangoIPAsignables() {
 		
-		String salida = Util.obtenerDireccionDecimal(rangoIP.get(1));
+		String salida = Util.obtenerDireccionDecimal(rangoIP.get(0));
 		salida += " - ";
-		salida += Util.obtenerDireccionDecimal(rangoIP.get(rangoIP.size()-2));
+		salida += Util.obtenerDireccionDecimal(rangoIP.get(rangoIP.size()-1));
 		return  salida;
 				
 	}
