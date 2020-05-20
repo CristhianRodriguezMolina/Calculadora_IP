@@ -352,8 +352,8 @@ public class Util {
 			int ip3Decimal = Integer.parseInt(ip3);
 			int ip4Decimal = Integer.parseInt(ip4);
 			
-			if((ip1Decimal >= 0 && ip1Decimal <= 255) || (ip2Decimal >= 0 && ip2Decimal <= 255) 
-				|| (ip3Decimal >= 0 && ip3Decimal <= 255) || (ip4Decimal >= 0 && ip4Decimal <= 255)) 
+			if((ip1Decimal >= 0 && ip1Decimal <= 255) && (ip2Decimal >= 0 && ip2Decimal <= 255) 
+				&& (ip3Decimal >= 0 && ip3Decimal <= 255) && (ip4Decimal >= 0 && ip4Decimal <= 255)) 
 			{
 				valid = true;
 			}
