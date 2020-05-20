@@ -499,6 +499,7 @@ public class Util {
 		for(int i = 0; i < number.length(); i++) 
 		{
 			caracter = number.charAt(i);
+			// si el caracter esta entre [0-10] y [A-F]
 			if(!((caracter >= 49 && caracter <= 57) || (caracter >= 65 && caracter <= 70))) 
 			{
 				return false;
