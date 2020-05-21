@@ -119,7 +119,7 @@
                   </Label>
                </left>
                <center>
-                  <JFXTextField fx:id="txtRangoIP" editable="false" prefHeight="25.0" prefWidth="191.0" BorderPane.alignment="CENTER" />
+                  <JFXTextField fx:id="txtRangoIP" alignment="CENTER" editable="false" prefHeight="25.0" prefWidth="191.0" BorderPane.alignment="CENTER" />
                </center>
                <right>
                   <AnchorPane prefHeight="72.0" prefWidth="57.0" BorderPane.alignment="CENTER" />
