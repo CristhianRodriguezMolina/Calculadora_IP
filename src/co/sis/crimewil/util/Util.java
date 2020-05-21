@@ -103,9 +103,9 @@ public class Util {
 		String salidaDecimal = "";
 		for (int i = 0; i < direccion.length; i+=8) {
 			if(i == 0) {
-				salidaDecimal += Util.convertirBinarioADecimal(convertirArregloAString((Arrays.copyOfRange(direccion, i, i + 8))));
+				salidaDecimal += convertirBinarioADecimal(convertirArregloAString((Arrays.copyOfRange(direccion, i, i + 8))));
 			}else {
-				salidaDecimal += "." + Util.convertirBinarioADecimal(convertirArregloAString(Arrays.copyOfRange(direccion, i, i + 8)));
+				salidaDecimal += "." + convertirBinarioADecimal(convertirArregloAString(Arrays.copyOfRange(direccion, i, i + 8)));
 			}			
 		}
 		return salidaDecimal;
