@@ -67,7 +67,7 @@
             <AnchorPane prefHeight="24.0" prefWidth="440.0" />
             <BorderPane prefHeight="55.0" prefWidth="440.0">
                <left>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="246.0" text="Dirección de Red: " BorderPane.alignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="220.0" text="Dirección de Red: " BorderPane.alignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -82,7 +82,7 @@
             </BorderPane>
             <BorderPane prefHeight="55.0" prefWidth="440.0">
                <left>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="246.0" text="Dirección de Broadcast: " BorderPane.alignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="220.0" text="Dirección de Broadcast: " BorderPane.alignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -97,7 +97,7 @@
             </BorderPane>
             <BorderPane prefHeight="55.0" prefWidth="440.0">
                <left>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="246.0" text="Cantidad de hosts de la Red: " BorderPane.alignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="220.0" text="Cantidad de hosts de la Red: " BorderPane.alignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -112,7 +112,7 @@
             </BorderPane>
             <BorderPane prefHeight="55.0" prefWidth="440.0">
                <left>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="246.0" text="Rango de IPs asignables:" BorderPane.alignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="220.0" text="Rango de IPs asignables:" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -127,7 +127,7 @@
             </BorderPane>
             <BorderPane prefHeight="55.0" prefWidth="440.0">
                <left>
-                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="246.0" text="IPs asignables:" BorderPane.alignment="CENTER">
+                  <Label alignment="BOTTOM_CENTER" prefHeight="28.0" prefWidth="220.0" text="IPs asignables:" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="14.0" />
                      </font>
