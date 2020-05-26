@@ -51,7 +51,7 @@ public class ManejadorEscenarios
 			
 			// se carga la vista
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("./vista/VentanaPrincipal.fxml"));
+			loader.setLocation(getClass().getResource("/co/sis/crimewil/vista/VentanaPrincipal.fxml"));
 			
 			borderPanel = (BorderPane) loader.load();
 			
@@ -76,7 +76,7 @@ public class ManejadorEscenarios
 
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("./vista/VentanaInicio.fxml"));
+			loader.setLocation(getClass().getResource("/co/sis/crimewil/vista/VentanaInicio.fxml"));
 			BorderPane panel = (BorderPane) loader.load();
 			borderPanel.setCenter(panel);
 
@@ -94,7 +94,7 @@ public class ManejadorEscenarios
 
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("./vista/VentanaHost.fxml"));
+			loader.setLocation(getClass().getResource("/co/sis/crimewil/vista/VentanaHost.fxml"));
 			BorderPane panel = (BorderPane) loader.load();
 			borderPanel.setCenter(panel);
 
@@ -115,7 +115,7 @@ public class ManejadorEscenarios
 			
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("./vista/VentanaRed.fxml"));
+			loader.setLocation(getClass().getResource("/co/sis/crimewil/vista/VentanaRed.fxml"));
 			BorderPane panel = (BorderPane) loader.load();
 			borderPanel.setCenter(panel);
 
@@ -136,7 +136,7 @@ public class ManejadorEscenarios
 			
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("./vista/VentanaConversor.fxml"));
+			loader.setLocation(getClass().getResource("/co/sis/crimewil/vista/VentanaConversor.fxml"));
 			BorderPane panel = (BorderPane) loader.load();
 			borderPanel.setCenter(panel);
 
